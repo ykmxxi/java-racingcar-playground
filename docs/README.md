@@ -19,11 +19,16 @@
 <br>
 ## 필요한 행동들(기능 목록)
 - 사용자의 입력을 받고, 결과를 출력한다: `View`
-  - [ ] 입력을 받는다: `readString()`
+  - [x] 입력을 받는다: `readString()`
+  - [x] 입력의 결과를 출력한다: `printResult()`
 - 사용자의 입력을 검증한다: `Validator`
-  - [ ] 전체 검증을 진행한다: `validate()`
-  - [ ] 구분자를 제외하고 숫자 이외의 값이 있는지 검사한다: `isNumber()`
-  - [ ] 음수인지 검사한다: `isNegative()`
+  - [x] 숫자인지 검사한다: `isNumber()`
+  - [x] null 또는 빈 문자열인지 검사한다: `isNullOrEmpty()`
+  - [x] 기본 구분자인지 검사한다: `isBasicDelimiter()`
+  - [x] 기본 구분자를 포함 숫자 이외의 값이 있는지 검사한다: `isNumberWithBasicDelimiter()`
+  - [x] 커스텀 구분자인지 검사한다: `isCustomDelimiter()`
+  - [x] 음수인지 검사한다: `isNegative()`
+  - [x] 전체 검증을 진행한다: `validate()`
 - 구분자(쉼표, 콜론, 커스텀 구분자)를 기준으로 입력을 구분한다: `Splitter`
   - [ ] 입력을 구분한다: `split()`
 - 분리된 입력을 계산한다: `Calculator`
