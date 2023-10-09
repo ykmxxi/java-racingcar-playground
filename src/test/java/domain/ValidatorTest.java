@@ -91,4 +91,16 @@ class ValidatorTest {
 		assertThat(result).isTrue();
 	}
 
+	@Test
+	void 음수_검증_통과() {
+		// given
+		String input = "-1";
+
+		// when
+		boolean result = validator.isNegative(input);
+
+		// then
+		assertThat(result).isTrue();
+	}
+
 }
