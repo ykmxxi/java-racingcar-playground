@@ -30,8 +30,8 @@
   - [x] 음수인지 검사한다: `isNegative()`
   - [x] 전체 검증을 진행한다: `validate()`
 - 구분자(쉼표, 콜론, 커스텀 구분자)를 기준으로 입력을 구분한다: `Splitter`
-  - [ ] 입력을 구분한다: `split()`
+  - [x] 입력을 구분한다: `split()`
 - 분리된 입력을 계산한다: `Calculator`
-  - [ ] 값을 더한다: `add()`
+  - [x] 값을 더한다: `add()`
 - 각 역할들의 중간 매개체: `StringAddCalculator`
-  - [ ] 입력을 구분자로 나누고 계산한다: `splitAndSum()`
+  - [x] 입력을 구분자로 나누고 계산한다: `splitAndSum()`
