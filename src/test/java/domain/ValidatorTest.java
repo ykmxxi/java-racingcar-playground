@@ -3,6 +3,8 @@ package domain;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 class ValidatorTest {
 
@@ -45,6 +47,16 @@ class ValidatorTest {
 		// then
 		assertThat(nullResult).isTrue();
 		assertThat(emptyResult).isTrue();
+	}
+
+	@ParameterizedTest
+	@ValueSource(strings = {",", ":"})
+	void test(String input) {
+		// when
+		boolean result = validator.isBasicDelimiter(input);
+
+		// then
+		assertThat(result).isTrue();
 	}
 
 }
