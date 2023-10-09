@@ -29,7 +29,7 @@ class ValidatorTest {
 		boolean result = validator.isNumber(input);
 
 		// then
-		assertThat(result).isFalse();ø
+		assertThat(result).isFalse();
 	}
 
 }
