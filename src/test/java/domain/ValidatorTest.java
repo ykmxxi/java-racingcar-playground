@@ -39,8 +39,8 @@ class ValidatorTest {
 		String emptyInput = "";
 
 		// when
-		boolean nullResult = validator.isNullOrEmpty();
-		boolean emptyResult = validator.isNullOrEmpty();
+		boolean nullResult = validator.isNullOrEmpty(nullInput);
+		boolean emptyResult = validator.isNullOrEmpty(emptyInput);
 
 		// then
 		assertThat(nullResult).isTrue();

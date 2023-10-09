@@ -8,4 +8,8 @@ public class Validator {
 		return input.matches(NUMBER_REGEX);
 	}
 
+	public boolean isNullOrEmpty(String input) {
+		return input == null || input.isEmpty();
+	}
+
 }
