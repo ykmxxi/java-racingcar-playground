@@ -79,4 +79,16 @@ class ValidatorTest {
 		assertThat(result).isFalse();
 	}
 
+	@Test
+	void 커스텀_구분자_검증_통과() {
+		// given
+		String input = "//;\n";
+
+		// when
+		boolean result = validator.isCustomDelimiter(input);
+
+		// then
+		assertThat(result).isTrue();
+	}
+
 }
