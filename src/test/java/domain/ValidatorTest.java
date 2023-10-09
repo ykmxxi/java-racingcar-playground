@@ -32,4 +32,19 @@ class ValidatorTest {
 		assertThat(result).isFalse();
 	}
 
+	@Test
+	void null_또는_빈_문자열_검증_통과() {
+		// given
+		String nullInput = null;
+		String emptyInput = "";
+
+		// when
+		boolean nullResult = validator.isNullOrEmpty();
+		boolean emptyResult = validator.isNullOrEmpty();
+
+		// then
+		assertThat(nullResult).isTrue();
+		assertThat(emptyResult).isTrue();
+	}
+
 }
