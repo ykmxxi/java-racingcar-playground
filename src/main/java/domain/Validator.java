@@ -9,6 +9,15 @@ public class Validator {
 	private static final String CUSTOM_DELIMITER_REGEX = "//(.)\n(.*)";
 	private static final String NEGATIVE_REGEX = "^-[1-9]\\d*";
 
+	public void validate(String input) {
+		if (!isNumberWithBasicDelimiter(input) && !isCustomDelimiter(input)) {
+			throw new RuntimeException();
+		}
+		if (!isCustomDelimiter(input) && isNegative(input)) {
+			throw new RuntimeException();
+		}
+	}
+
 	public boolean isNumber(String input) {
 		return input.matches(NUMBER_REGEX);
 	}
