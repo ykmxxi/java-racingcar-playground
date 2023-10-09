@@ -1,5 +1,7 @@
 package domain;
 
+import java.util.Arrays;
+
 public class Validator {
 
 	private static final String NUMBER_REGEX = "[1-9]\\d*";
@@ -15,6 +17,11 @@ public class Validator {
 
 	public boolean isBasicDelimiter(String input) {
 		return input.matches(BASIC_DELIMITER_REGEX);
+	}
+
+	public boolean isNumberWithBasicDelimiter(String input) {
+		return Arrays.stream(input.split(""))
+					 .allMatch(token -> isNumber(token) || isBasicDelimiter(token));
 	}
 
 }
