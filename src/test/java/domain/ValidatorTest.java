@@ -59,4 +59,24 @@ class ValidatorTest {
 		assertThat(result).isTrue();
 	}
 
+	@ParameterizedTest
+	@ValueSource(strings = {"1,2,3", "1:2:3", "1,2:3"})
+	void 기본_구분자_제외_숫자_검증_통과(String input) {
+		// when
+		boolean result = validator.isNumberWithBasicDelimiter(input);
+
+		// then
+		assertThat(result).isTrue();
+	}
+
+	@ParameterizedTest
+	@ValueSource(strings = {"1^2^3", "one:two:three", "1.2/3"})
+	void 기본_구분자_제외_숫자_검증_실패(String input) {
+		// when
+		boolean result = validator.isNumberWithBasicDelimiter(input);
+
+		// then
+		assertThat(result).isFalse();
+	}
+
 }
