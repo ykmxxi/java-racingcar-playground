@@ -1,7 +1,9 @@
 package domain;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -101,6 +103,14 @@ class ValidatorTest {
 
 		// then
 		assertThat(result).isTrue();
+	}
+
+	@ParameterizedTest
+	@ValueSource(strings = {"1^2^3", "-1,23", "1,-23"})
+	void 전체_검증_실패(String input) {
+		// when & then
+		assertThatThrownBy(() -> validator.validate(input))
+			.isInstanceOf(RuntimeException.class);
 	}
 
 }
