@@ -7,6 +7,7 @@ public class Validator {
 	private static final String NUMBER_REGEX = "[1-9]\\d*";
 	private static final String BASIC_DELIMITER_REGEX = "[,:]";
 	private static final String CUSTOM_DELIMITER_REGEX = "//(.)\n(.*)";
+	private static final String NEGATIVE_REGEX = "^-[1-9]\\d*";
 
 	public boolean isNumber(String input) {
 		return input.matches(NUMBER_REGEX);
@@ -27,6 +28,10 @@ public class Validator {
 
 	public boolean isCustomDelimiter(String input) {
 		return input.matches(CUSTOM_DELIMITER_REGEX);
+	}
+
+	public boolean isNegative(String input) {
+		return input.matches(NEGATIVE_REGEX);
 	}
 
 }
