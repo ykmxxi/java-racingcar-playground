@@ -2,6 +2,7 @@ package domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -27,6 +28,30 @@ class ValidatorTest {
 
 		// then
 		assertThat(result).isFalse();
+	}
+
+	@Test
+	void 자동차_2대_이상_검증_성공() {
+		// given
+		String input = "pobi,krong";
+
+		// when
+		boolean result = validator.isCarCountGreaterThanOrEqualTwo(input);
+
+		// then
+		assertThat(result).isTrue();
+	}
+
+	@Test
+	void 자동차_2대_이상_검증_실패() {
+		// given
+		String input = "pobi";
+
+		// when
+		boolean result = validator.isCarCountGreaterThanOrEqualTwo(input);
+
+		// then
+		assertThat(result).isTrue();
 	}
 
 }
