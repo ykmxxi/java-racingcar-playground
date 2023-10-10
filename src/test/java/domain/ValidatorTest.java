@@ -51,7 +51,7 @@ class ValidatorTest {
 		boolean result = validator.isCarCountGreaterThanOrEqualTwo(input);
 
 		// then
-		assertThat(result).isTrue();
+		assertThat(result).isFalse();
 	}
 
 }
