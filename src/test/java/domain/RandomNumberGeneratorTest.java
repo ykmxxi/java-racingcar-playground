@@ -8,11 +8,8 @@ class RandomNumberGeneratorTest {
 
 	@Test
 	void 난수_생성_테스트() {
-		// given
-		RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();
-
 		// when
-		int result = randomNumberGenerator.createRandomNumber();
+		int result = RandomNumberGenerator.createRandomNumber();
 
 		// then
 		System.out.println("result = " + result);
