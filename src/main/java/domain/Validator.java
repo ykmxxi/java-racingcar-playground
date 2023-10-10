@@ -25,4 +25,8 @@ public class Validator {
 		return input.split(COMMA).length;
 	}
 
+	public boolean isBetweenOneAndNine(int number) {
+		return number > 0 && number < 10;
+	}
+
 }

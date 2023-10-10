@@ -61,7 +61,7 @@ class ValidatorTest {
 		boolean result = validator.isBetweenOneAndNine(number);
 
 		// then
-		assertThat(result).isTrue()
+		assertThat(result).isTrue();
 	}
 
 	@ParameterizedTest
