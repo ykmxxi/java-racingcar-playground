@@ -13,14 +13,15 @@
 - RandomNumberGenerator: 랜덤 값 생성 유틸성 메서드를 제공하는 객체
   - [x] 0에서 9사이의 값을 생성한다: `createRandomNumber`
 - GameOperator: 게임 운영과 관련된 메서드를 제공하는 객체
+  - [ ] 입력받은 자동차 이름을 구분해 알려준다: `splitCarNames`  
   - [x] 생성한 random 값이 4보다 큰지 알려준다: `isGreaterThanOrEqualThanFour`
 - Car:
-  - [ ] random 값 생성기에 자신이 움직여도 되는지 물어본다: `canMove`
-  - [ ] 움직인 후 본인의 위치를 갱신한다: `updatePosition`
+  - [x] 게임 운영 객체에게 자신이 움직여도 되는지 물어본다: `canMove`
+  - [x] 움직인 후 본인의 위치를 갱신한다: `updatePosition`
 - Validator: 입력을 검증하는 메서드를 제공하는 객체
-  - [ ] 자동차 이름이 5자 이하인지 검증한다: `isLessThanOrEqualFive`
-  - [ ] 자동차가 2대 이상인지 검증한다: `isCarCountGreaterThanOrEqualTwo`
-  - [ ] 1에서 9사이의 자리 숫자를 입력했는지 검증한다: `isBetweenOneAndNine`
+  - [x] 자동차 이름이 5자 이하인지 검증한다: `isLessThanOrEqualFive`
+  - [x] 자동차가 2대 이상인지 검증한다: `isCarCountGreaterThanOrEqualTwo`
+  - [x] 1에서 9사이의 자리 숫자를 입력했는지 검증한다: `isBetweenOneAndNine`
     - 너무 큰 숫자를 받으면 게임이 길어지기 때문에 제약을 둔다
 - GameController
   - [ ] 자동차 이름을 입력 받고 검증한다:
