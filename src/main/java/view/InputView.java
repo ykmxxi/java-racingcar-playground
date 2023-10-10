@@ -15,6 +15,14 @@ public class InputView {
 		return carNames;
 	}
 
+	public String readNumberOfAttempts() {
+		String numberOfAttempts = scanner.nextLine();
+		if (isEmptyOrWhitespaces(numberOfAttempts)) {
+			throw new RuntimeException(ERROR_MESSAGE);
+		}
+		return numberOfAttempts;
+	}
+
 	public boolean isEmptyOrWhitespaces(String input) {
 		return input.isBlank();
 	}
