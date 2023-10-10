@@ -22,4 +22,12 @@ public class Car {
 		this.position++;
 	}
 
+	public boolean canMove() {
+		GameOperator gameOperator = new GameOperator();
+		if (gameOperator.isGreaterThanOrEqualThanFour()) {
+			return true;
+		}
+		return false;
+	}
+
 }
