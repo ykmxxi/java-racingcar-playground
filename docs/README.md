@@ -1,35 +1,35 @@
 # 📌 자동차 경주 게임 구현
 ## 필요한 행동들(기능 목록)
 - OutputView: 출력과 관련된 유틸성 메서드를 제공하는 객체
-  - 자동차 이름 입력을 위한 가이드를 출력한다: `printNameInputGuide`
-  - 게임 시도 횟수 입력을 위한 가이드를 출력한다: `printNumberOfAttemptsGuide`
-  - 게임 실행 결과를 출력한다: `printExecutionResult`
-  - 게임 우승자를 알려준다: `printChampionNames`
+  - [x] 자동차 이름 입력을 위한 가이드를 출력한다: `printNameInputGuide`
+  - [x] 게임 시도 횟수 입력을 위한 가이드를 출력한다: `printNumberOfAttemptsGuide`
+  - [ ] 게임 실행 결과를 출력한다: `printExecutionResult`
+  - [ ] 게임 우승자를 알려준다: `printChampionNames`
 - InputView: 사용자의 입력을 받는 메서드를 제공하는 객체
-  - 자동차 이름들을 입력 받는다: `readCarNames`
-  - 시도할 횟수를 입력 받는다: `readNumberOfAttempts`
-  - 공백을 검사한다: `isEmptyOrWhitespaces`
+  - [x] 자동차 이름들을 입력 받는다: `readCarNames`
+  - [x] 시도할 횟수를 입력 받는다: `readNumberOfAttempts`
+  - [x] 공백을 검사한다: `isEmptyOrWhitespaces`
     - 입력을 받는 계층에서 간단한 검증을 한다
-- RandomNumberGenerator: 0에서 9사이의 값을 생성하고 4보다 큰지 알려주는 객체
-  - 0에서 9사이의 값을 생성한다: `createRandomNumber`
-    - 외부 객체에 값을 공개할 필요가 있을까? 그냥 4보다 큰지만 알려주면 될것 같음
-  - 생성한 random 값이 4보다 큰지 알려준다: `isGreaterThanOrEqualThanFour`
+- RandomNumberGenerator: 랜덤 값 생성 유틸성 메서드를 제공하는 객체
+  - [x] 0에서 9사이의 값을 생성한다: `createRandomNumber`
+- GameOperator: 게임 운영과 관련된 메서드를 제공하는 객체
+  - [x] 생성한 random 값이 4보다 큰지 알려준다: `isGreaterThanOrEqualThanFour`
 - Car:
-  - random 값 생성기에 자신이 움직여도 되는지 물어본다: `canMove`
-  - 움직인 후 본인의 위치를 갱신한다: `updatePosition`
+  - [ ] random 값 생성기에 자신이 움직여도 되는지 물어본다: `canMove`
+  - [ ] 움직인 후 본인의 위치를 갱신한다: `updatePosition`
 - Validator: 입력을 검증하는 메서드를 제공하는 객체
-  - 자동차 이름이 5자 이하인지 검증한다: `isLessThanOrEqualFive`
-  - 자동차가 2대 이상인지 검증한다: `isCarCountGreaterThanOrEqualTwo`
-  - 1에서 9사이의 자리 숫자를 입력했는지 검증한다: `isBetweenOneAndNine`
+  - [ ] 자동차 이름이 5자 이하인지 검증한다: `isLessThanOrEqualFive`
+  - [ ] 자동차가 2대 이상인지 검증한다: `isCarCountGreaterThanOrEqualTwo`
+  - [ ] 1에서 9사이의 자리 숫자를 입력했는지 검증한다: `isBetweenOneAndNine`
     - 너무 큰 숫자를 받으면 게임이 길어지기 때문에 제약을 둔다
 - GameController
-  - 자동차 이름을 입력 받고 검증한다:
-  - 게임 시도 횟수를 입력 받고 검증한다:
-  - 게임을 진행하고, 각 라운드 결과를 출력한다: 
-  - 최종 우승자를 출력한다:
+  - [ ] 자동차 이름을 입력 받고 검증한다:
+  - [ ] 게임 시도 횟수를 입력 받고 검증한다:
+  - [ ] 게임을 진행하고, 각 라운드 결과를 출력한다: 
+  - [ ] 최종 우승자를 출력한다:
 - GameService
-  - 라운드를 진행(자동차 전진)한다: 
-  - 최종 우승자를 알려준다:
+  - [ ] 라운드를 진행(자동차 전진)한다: 
+  - [ ] 최종 우승자를 알려준다:
 
 ## 기능 요구사항
 - 각 자동차에 이름을 부여할 수 있다. 단 자동차 이름은 5자를 초과할 수 없음
