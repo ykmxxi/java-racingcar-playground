@@ -54,4 +54,24 @@ class ValidatorTest {
 		assertThat(result).isFalse();
 	}
 
+	@ParameterizedTest
+	@ValueSource(ints = {1, 9})
+	void _1부터_9사이_숫자_검증_성공(int number) {
+		// when
+		boolean result = validator.isBetweenOneAndNine(number);
+
+		// then
+		assertThat(result).isTrue()
+	}
+
+	@ParameterizedTest
+	@ValueSource(ints = {0, 10})
+	void _1부터_9사이_숫자_검증_실패(int number) {
+		// when
+		boolean result = validator.isBetweenOneAndNine(number);
+
+		// then
+		assertThat(result).isFalse();
+	}
+
 }
