@@ -15,7 +15,8 @@ class CarTest {
 		car.updatePosition();
 
 		// then
-		assertThat(result.getPosition()).isEqualTo(2);
+		assertThat(car.getName()).isEqualTo("name");
+		assertThat(car.getPosition()).isEqualTo(2);
 	}
 
 }
