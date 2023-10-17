@@ -44,6 +44,11 @@ public class GameController {
 								 .map(Car::new)
 								 .collect(Collectors.toList());
 		Race race = new Race(cars);
+		play(carNames, numberOfAttempts, race);
+		OutputView.printChampionNames(race.notifyChampionNames());
+	}
+
+	private void play(List<String> carNames, int numberOfAttempts, Race race) {
 		System.out.println("실행 결과");
 		OutputView.printExecutionResult(carNames, race.createRoundResult());
 		for (int round = 1; round <= numberOfAttempts; round++) {
