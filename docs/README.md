@@ -3,8 +3,8 @@
 - OutputView: 출력과 관련된 유틸성 메서드를 제공하는 객체
   - [x] 자동차 이름 입력을 위한 가이드를 출력한다: `printNameInputGuide`
   - [x] 게임 시도 횟수 입력을 위한 가이드를 출력한다: `printNumberOfAttemptsGuide`
-  - [ ] 게임 실행 결과를 출력한다: `printExecutionResult`
-  - [ ] 게임 우승자를 알려준다: `printChampionNames`
+  - [x] 게임 실행 결과를 출력한다: `printExecutionResult`
+  - [x] 게임 우승자를 알려준다: `printChampionNames`
 - InputView: 사용자의 입력을 받는 메서드를 제공하는 객체
   - [x] 자동차 이름들을 입력 받는다: `readCarNames`
   - [x] 시도할 횟수를 입력 받는다: `readNumberOfAttempts`
@@ -13,7 +13,7 @@
 - RandomNumberGenerator: 랜덤 값 생성 유틸성 메서드를 제공하는 객체
   - [x] 0에서 9사이의 값을 생성한다: `createRandomNumber`
 - GameOperator: 게임 운영과 관련된 메서드를 제공하는 객체
-  - [ ] 입력받은 자동차 이름을 구분해 알려준다: `splitCarNames`  
+  - [x] 입력받은 자동차 이름을 구분해 알려준다: `splitCarNames`  
   - [x] 생성한 random 값이 4보다 큰지 알려준다: `isGreaterThanOrEqualThanFour`
 - Car:
   - [x] 게임 운영 객체에게 자신이 움직여도 되는지 물어본다: `canMove`
@@ -23,14 +23,14 @@
   - [x] 자동차가 2대 이상인지 검증한다: `isCarCountGreaterThanOrEqualTwo`
   - [x] 1에서 9사이의 자리 숫자를 입력했는지 검증한다: `isBetweenOneAndNine`
     - 너무 큰 숫자를 받으면 게임이 길어지기 때문에 제약을 둔다
+- Race: 레이싱 게임 서비스를 제공하는 객체
+  - [x] 라운드를 진행 시켜 자동차를 움직인다: `playRound`
+  - [x] 라운드 진행 결과를 만들어준다: `createRoundResult`
+  - [x] 라운드 우승자를 알려준다. `notifyChampionNames`
 - GameController
-  - [ ] 자동차 이름을 입력 받고 검증한다:
-  - [ ] 게임 시도 횟수를 입력 받고 검증한다:
-  - [ ] 게임을 진행하고, 각 라운드 결과를 출력한다: 
-  - [ ] 최종 우승자를 출력한다:
-- GameService
-  - [ ] 라운드를 진행(자동차 전진)한다: 
-  - [ ] 최종 우승자를 알려준다:
+  - [x] 자동차 이름을 입력 받고 검증한다: `getCarNamesAndValidate`
+  - [x] 게임 시도 횟수를 입력 받고 검증한다: `getNumberOfAttemptsAndValidate`
+  - [x] 게임을 진행하고, 각 라운드 결과를 출력하고 최종 우승자를 출력한다: `playGame`
 
 ## 기능 요구사항
 - 각 자동차에 이름을 부여할 수 있다. 단 자동차 이름은 5자를 초과할 수 없음
