@@ -22,7 +22,13 @@ public class GameController {
 		this.gameOperator = new GameOperator();
 	}
 
-	public List<String> getCarNamesAndValidate() {
+	public void run() {
+		List<String> carNames = getCarNamesAndValidate();
+		int numberOfAttempts = getNumberOfAttemptsAndValidate();
+		playGame(carNames, numberOfAttempts);
+	}
+
+	private List<String> getCarNamesAndValidate() {
 		OutputView.printNameInputGuide();
 		String input = inputView.readCarNames();
 		List<String> carNames = gameOperator.splitCarNames(input);
@@ -31,7 +37,7 @@ public class GameController {
 		return carNames;
 	}
 
-	public int getNumberOfAttemptsAndValidate() {
+	private int getNumberOfAttemptsAndValidate() {
 		OutputView.printNumberOfAttemptsGuide();
 		String input = inputView.readNumberOfAttempts();
 		int numberOfAttempts = Integer.parseInt(input);
@@ -39,7 +45,7 @@ public class GameController {
 		return numberOfAttempts;
 	}
 
-	public void playGame(List<String> carNames, int numberOfAttempts) {
+	private void playGame(List<String> carNames, int numberOfAttempts) {
 		List<Car> cars = carNames.stream()
 								 .map(Car::new)
 								 .collect(Collectors.toList());

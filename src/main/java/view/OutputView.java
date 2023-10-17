@@ -22,6 +22,7 @@ public class OutputView {
 			String result = roundResult.get(idx);
 			System.out.println(name + " : " + result);
 		}
+		System.out.println();
 	}
 
 	public static void printChampionNames(List<String> championNames) {
