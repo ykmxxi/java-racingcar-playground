@@ -55,7 +55,7 @@ public class GameController {
 	}
 
 	private void validateNumberOfAttempts(int numberOfAttempts) {
-		if (validator.isBetweenOneAndNine(numberOfAttempts)) {
+		if (!validator.isBetweenOneAndNine(numberOfAttempts)) {
 			throw new RuntimeException();
 		}
 	}
