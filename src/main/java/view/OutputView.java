@@ -1,5 +1,7 @@
 package view;
 
+import java.util.List;
+
 public class OutputView {
 
 	private static final String NAME_INPUT_GUIDE = "경주할 자동차 이름을 입력하세요(이름은 5자 이하 쉼표(,)를 기준으로 구분, 2대 이상을 입력).";
@@ -11,6 +13,14 @@ public class OutputView {
 
 	public static void printNumberOfAttemptsGuide() {
 		System.out.println(ATTEMPTS_NUMBER_INPUT_GUIDE);
+	}
+
+	public static void printExecutionResult(List<String> carNames, List<String> roundResult) {
+		for (int idx = 0; idx < carNames.size(); idx++) {
+			String name = carNames.get(idx);
+			String result = roundResult.get(idx);
+			System.out.println(name + " : " + result);
+		}
 	}
 
 }

@@ -12,7 +12,7 @@ class RaceTest {
 	@Test
 	void 라운드_진행_결과_생성() {
 		// given
-		Race race = new Race(List.of(new Car("pobi"), new Car("crong")), 1);
+		Race race = new Race(List.of(new Car("pobi"), new Car("crong")));
 
 		// when
 		race.playRound();
@@ -30,8 +30,8 @@ class RaceTest {
 	@Test
 	void 우승자를_알려주는_기능() {
 		// given
-		Race race1 = new Race(List.of(new Car("pobi"), new Car("crong")), 0);
-		Race race2 = new Race(List.of(new Car("pobi"), new Car("crong")), 0);
+		Race race1 = new Race(List.of(new Car("pobi"), new Car("crong")));
+		Race race2 = new Race(List.of(new Car("pobi"), new Car("crong")));
 
 		// when
 		List<Car> cars1 = race1.getCars();

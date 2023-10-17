@@ -7,11 +7,9 @@ import java.util.stream.Collectors;
 public class Race {
 
 	private final List<Car> cars;
-	private final int retryCount;
 
-	public Race(List<Car> cars, int retryCount) {
+	public Race(List<Car> cars) {
 		this.cars = cars;
-		this.retryCount = retryCount;
 	}
 
 	public List<Car> getCars() {
@@ -19,12 +17,6 @@ public class Race {
 	}
 
 	public void playRound() {
-		for (int round = 1; round <= retryCount; round++) {
-			play();
-		}
-	}
-
-	private void play() {
 		for (Car car : cars) {
 			if (car.canMove()) {
 				car.updatePosition();
