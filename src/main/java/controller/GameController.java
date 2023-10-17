@@ -26,4 +26,11 @@ public class GameController {
 		return carNames;
 	}
 
+	public int getNumberOfAttemptsAndValidate() {
+		String input = inputView.readNumberOfAttempts();
+		int numberOfAttempts = Integer.parseInt(input);
+		validator.isBetweenOneAndNine(numberOfAttempts);
+		return numberOfAttempts;
+	}
+
 }
