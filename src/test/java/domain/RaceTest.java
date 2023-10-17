@@ -12,7 +12,7 @@ class RaceTest {
 	@Test
 	void 라운드_진행_결과_생성() {
 		// given
-		Race race = new Race();
+		Race race = new Race(List.of(new Car("pobi"), new Car("crong")), 1);
 
 		// when
 		race.playRound();
