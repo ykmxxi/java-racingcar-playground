@@ -37,11 +37,11 @@ public class GameController {
 
 	private void validateCarNames(String input, List<String> carNames) {
 		for (String carName : carNames) {
-			if (validator.isLessThanOrEqualFive(carName)) {
+			if (!validator.isLessThanOrEqualFive(carName)) {
 				throw new RuntimeException();
 			}
 		}
-		if (validator.isCarCountGreaterThanOrEqualTwo(input)) {
+		if (!validator.isCarCountGreaterThanOrEqualTwo(input)) {
 			throw new RuntimeException();
 		}
 	}
