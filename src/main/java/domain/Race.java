@@ -2,6 +2,7 @@ package domain;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Race {
 
@@ -29,6 +30,13 @@ public class Race {
 				car.updatePosition();
 			}
 		}
+	}
+
+	public List<String> createRoundResult() {
+		return cars.stream()
+				   .map(Car::getPosition)
+				   .map("-"::repeat)
+				   .collect(Collectors.toList());
 	}
 
 }
