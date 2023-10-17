@@ -14,12 +14,10 @@ public class GameController {
 
 	private final InputView inputView;
 	private final Validator validator;
-	private final GameOperator gameOperator;
 
 	public GameController() {
 		this.inputView = new InputView();
 		this.validator = new Validator();
-		this.gameOperator = new GameOperator();
 	}
 
 	public void run() {
@@ -31,18 +29,35 @@ public class GameController {
 	private List<String> getCarNamesAndValidate() {
 		OutputView.printNameInputGuide();
 		String input = inputView.readCarNames();
+		GameOperator gameOperator = new GameOperator();
 		List<String> carNames = gameOperator.splitCarNames(input);
-		carNames.forEach(validator::isLessThanOrEqualFive);
-		validator.isCarCountGreaterThanOrEqualTwo(input);
+		validateCarNames(input, carNames);
 		return carNames;
+	}
+
+	private void validateCarNames(String input, List<String> carNames) {
+		for (String carName : carNames) {
+			if (validator.isLessThanOrEqualFive(carName)) {
+				throw new RuntimeException();
+			}
+		}
+		if (validator.isCarCountGreaterThanOrEqualTwo(input)) {
+			throw new RuntimeException();
+		}
 	}
 
 	private int getNumberOfAttemptsAndValidate() {
 		OutputView.printNumberOfAttemptsGuide();
 		String input = inputView.readNumberOfAttempts();
 		int numberOfAttempts = Integer.parseInt(input);
-		validator.isBetweenOneAndNine(numberOfAttempts);
+		validateNumberOfAttempts(numberOfAttempts);
 		return numberOfAttempts;
+	}
+
+	private void validateNumberOfAttempts(int numberOfAttempts) {
+		if (validator.isBetweenOneAndNine(numberOfAttempts)) {
+			throw new RuntimeException();
+		}
 	}
 
 	private void playGame(List<String> carNames, int numberOfAttempts) {
