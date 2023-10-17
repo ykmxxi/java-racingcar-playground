@@ -39,4 +39,23 @@ public class Race {
 				   .collect(Collectors.toList());
 	}
 
+	public List<String> notifyChampionNames() {
+		int championsPosition = findChampionPosition();
+		return cars.stream()
+				   .filter(car -> car.getPosition() >= championsPosition)
+				   .map(Car::getName)
+				   .collect(Collectors.toList());
+	}
+
+	private int findChampionPosition() {
+		int maxPosition = 0;
+		for (Car car : cars) {
+			int position = car.getPosition();
+			if (position > maxPosition) {
+				maxPosition = position;
+			}
+		}
+		return maxPosition;
+	}
+
 }
